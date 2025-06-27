@@ -52,8 +52,9 @@ coverage.xml
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# macOS
+# macOSbv  
 .DS_Store
 
 # VSCode
 .vscode/ 
+node_modules/*

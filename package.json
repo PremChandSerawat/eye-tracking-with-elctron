@@ -1,0 +1,104 @@
+{
+  "name": "eye-blink-tracker-desktop",
+  "version": "1.0.0",
+  "description": "Cross-platform desktop application for eye blink tracking with real-time performance monitoring",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "build-mac": "electron-builder --mac",
+    "build-win": "electron-builder --win",
+    "build-linux": "electron-builder --linux",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish=never",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "electron",
+    "eye-tracking",
+    "blink-counter",
+    "cross-platform",
+    "performance-monitoring",
+    "desktop-app"
+  ],
+  "author": "Eye Tracker Team",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "dependencies": {
+    "systeminformation": "^5.21.0",
+    "pidusage": "^3.0.2"
+  },
+  "build": {
+    "appId": "com.eyetracker.desktop",
+    "productName": "Eye Blink Tracker",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "eye_blink_counter.py",
+      "requirements.txt",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "eye_blink_counter.py",
+        "to": "eye_blink_counter.py"
+      },
+      {
+        "from": "requirements.txt", 
+        "to": "requirements.txt"
+      }
+    ],
+    "mac": {
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.healthcare-fitness",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "target": [
+        {
+          "target": "default",
+          "arch": ["x64", "arm64"]
+        }
+      ]
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "appx",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "assets/icon.png",
+      "target": "AppImage"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eyetracker/desktop-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eyetracker/desktop-app/issues"
+  },
+  "homepage": "https://github.com/eyetracker/desktop-app#readme"
+} 
