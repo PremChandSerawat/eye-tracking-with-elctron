@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="#1e293b" stroke="#3b82f6" stroke-width="4"/>
+  
+  <!-- Eye shape -->
+  <ellipse cx="128" cy="128" rx="80" ry="40" fill="#3b82f6" opacity="0.8"/>
+  
+  <!-- Eye outline -->
+  <path d="M 48 128 Q 128 80 208 128 Q 128 176 48 128 Z" 
+        fill="none" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Pupil -->
+  <circle cx="128" cy="128" r="20" fill="#1a202c"/>
+  
+  <!-- Iris -->
+  <circle cx="128" cy="128" r="30" fill="#3b82f6" opacity="0.6"/>
+  
+  <!-- Light reflection -->
+  <circle cx="135" cy="121" r="8" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- App title text -->
+  <text x="128" y="200" text-anchor="middle" fill="#e2e8f0" 
+        font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    Eye Tracker
+  </text>
+</svg> 

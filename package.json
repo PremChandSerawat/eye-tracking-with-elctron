@@ -58,28 +58,20 @@
       }
     ],
     "mac": {
-      "icon": "assets/icon.icns",
       "category": "public.app-category.healthcare-fitness",
-      "hardenedRuntime": true,
+      "hardenedRuntime": false,
       "gatekeeperAssess": false,
-      "entitlements": "build/entitlements.mac.plist",
-      "entitlementsInherit": "build/entitlements.mac.plist",
       "target": [
         {
-          "target": "default",
+          "target": "dmg",
           "arch": ["x64", "arm64"]
         }
       ]
     },
     "win": {
-      "icon": "assets/icon.ico",
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
-        },
-        {
-          "target": "appx",
           "arch": ["x64"]
         }
       ]
